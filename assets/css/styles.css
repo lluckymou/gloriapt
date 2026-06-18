@@ -42,7 +42,7 @@
   --glass-bg:     rgba(255, 255, 255, 0.40);
   --glass-bg-2:   rgba(255, 255, 255, 0.62);
   --glass-border: rgba(255, 255, 255, 0.60);
-  --glass-blur:   20px;
+  --glass-blur:   12px;
   --radius:       28px;
   --radius-sm:    16px;
   --shadow:       0 10px 30px rgba(196, 60, 120, 0.18);
@@ -77,7 +77,7 @@ body::before {
     radial-gradient(60% 60% at 75% 88%, var(--base-glow) 0%, rgba(255,249,230,0) 60%),
     radial-gradient(55% 55% at 10% 90%, var(--lilac) 0%, rgba(210,196,227,0) 60%),
     linear-gradient(135deg, var(--base-light), var(--base-glow));
-  background-attachment: fixed;
+  will-change: transform;
   animation: auroraDrift 24s ease-in-out infinite alternate;
 }
 /* segunda camada glossy de luz */
@@ -266,7 +266,7 @@ body::after {
 /* accent tints per module */
 .mod-card.tint-geo   { background: linear-gradient(150deg, rgba(210,196,227,.55), var(--glass-bg)); }
 .mod-card.tint-horas { background: linear-gradient(150deg, rgba(197,232,247,.6), var(--glass-bg)); }
-.horas-period { font-size: 15px; color: var(--ink-soft); margin-top: 4px; font-style: italic; }
+.horas-period { font-size: 15px; color: var(--ink-soft); margin-top: 4px; font-style: italic; text-align: center; }
 .mod-card.tint-num  { background: linear-gradient(150deg, rgba(246,177,195,.5), var(--glass-bg)); }
 .mod-card.tint-color{ background: linear-gradient(150deg, rgba(197,209,247,.5), var(--glass-bg)); }
 .mod-card.tint-voc  { background: linear-gradient(150deg, rgba(250,101,167,.4), var(--glass-bg)); }
@@ -387,7 +387,7 @@ input:focus, select:focus { border-color: var(--pink-mid); box-shadow: 0 0 0 3px
   border: 1px solid var(--glass-border);
   background: var(--glass-bg-2);
   cursor: pointer; font-size: 14px; user-select: none;
-  transition: all .15s;
+  transition: background .15s, color .15s, border-color .15s, box-shadow .15s;
 }
 .chip.on { background: linear-gradient(120deg, var(--pink-strong), var(--pink-mid)); color: #fff; border-color: transparent; box-shadow: var(--shadow); }
 .chip input { display: none; }
@@ -491,7 +491,7 @@ input:focus, select:focus { border-color: var(--pink-mid); box-shadow: 0 0 0 3px
   border: 1px solid var(--glass-border);
   background: var(--glass-bg-2);
   cursor: pointer; font-size: 16px; font-weight: 600;
-  text-align: center; transition: all .15s;
+  text-align: center; transition: transform .15s, box-shadow .15s, background .15s, color .15s, border-color .15s;
   display: flex; align-items: center; justify-content: center; gap: 8px;
   min-height: 60px;
 }

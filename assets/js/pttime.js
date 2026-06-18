@@ -28,7 +28,7 @@ const PTTime = (() => {
   const SMALL = { 5: 'cinco', 10: 'dez', 20: 'vinte', 25: 'vinte e cinco' };
 
   function minLabel(m) {
-    if (m === 15) return 'um quarto';
+    if (m === 15) return 'quinze';
     return SMALL[m] || String(m);
   }
 
@@ -36,7 +36,7 @@ const PTTime = (() => {
     if (m === 0) return hourFull(h);
     if (m <= 30) {
       const base = hourFull(h);
-      const min = m === 30 ? 'e meia' : m === 15 ? 'e um quarto' : 'e ' + minLabel(m);
+      const min = m === 30 ? 'e meia' : m === 15 ? 'e quinze' : 'e ' + minLabel(m);
       return base + ' ' + min;
     }
     const rem = 60 - m;
