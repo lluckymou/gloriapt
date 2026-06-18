@@ -1,0 +1,19 @@
+{
+  "name": "Glória PT — Português para coreanos",
+  "short_name": "Glória PT",
+  "description": "Portal de aprendizado de português para falantes de coreano: flashcards, números, cores, gênero, geografia, ditado, conjugador e dicionário.",
+  "lang": "ko",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FCDCE2",
+  "theme_color": "#F6B1C3",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "assets/gloria.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/gloria.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/gloria.png", "sizes": "1024x1024", "type": "image/png", "purpose": "maskable" }
+  ]
+}
